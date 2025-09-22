@@ -1,0 +1,71 @@
+.kanban-board {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 0;
+    background: var(--bg);
+  }
+  
+  .board-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .add-column-btn {
+    background: var(--accent);
+    color: #fff;
+    border: 1px solid var(--accent);
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .add-column-btn:hover {
+    background: var(--accentHover);
+    border-color: var(--accentHover);
+  }
+  
+  .columns-container {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  @media (max-width: 768px) {
+    .board-header {
+      justify-content: center;
+    }
+    .columns-container {
+      gap: 12px;
+      padding: 0 10px 14px;
+    }
+    .add-column-btn {
+      padding: 8px 12px;
+      font-size: 12px;
+    }
+  }
+  
+  .columns-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .columns-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+  }
+  
+  .columns-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  
+  .columns-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  
+  

@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+/* Jira-like light theme */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #f4f5f7;
+  --border: #dfe1e6;
+  --text: #172b4d;
+  --muted: #6b778c;
+  --accent: #0052cc;
+  --accentHover: #0747a6;
+}
+
+.App-header {
+  background-color: var(--bg);
+  padding: 20px;
+  color: var(--text);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  padding: 0 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 14px;
+  }
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+  main {
+    padding: 0 12px;
+  }
+}

@@ -1,0 +1,105 @@
+.task {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+    cursor: grab;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+    color: var(--text);
+  }
+  
+  .task:hover {
+    border-color: var(--accent);
+    background-color: #f7f8fa;
+  }
+  
+  .task.dragging {
+    cursor: grabbing;
+    transform: scale(1.01);
+    border-color: var(--accent);
+    background: #f0f4ff;
+  }
+  
+  .task-content {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text);
+    word-wrap: break-word;
+  }
+
+.task-title-input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.4;
+    padding: 8px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    align-items: center;
+}
+
+.task-status-select {
+    flex: 1;
+    min-width: 0;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 12px;
+}
+
+.task-delete-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: #b91c1c;
+    width: 28px;
+    height: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.task-delete-btn:hover {
+    background: #fff0f0;
+    border-color: #ffc9c9;
+}
+
+/* Ensure dropdown options are visible across themes */
+.task-status-select option {
+    color: var(--text);
+    background: var(--surface);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .task {
+        padding: 10px;
+    }
+    .task-content {
+        font-size: 13px;
+    }
+    .task-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .task-status-select {
+        font-size: 11px;
+        padding: 5px 6px;
+    }
+    .task-delete-btn {
+        width: 26px;
+        height: 26px;
+    }
+}
+  
