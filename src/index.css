@@ -1,25 +1,498 @@
+/* Base styles remain unchanged, only adding or modifying for mobile responsiveness */
+.column {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  min-width: 240px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  color: var(--text);
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.column-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.column-title:hover {
+  background-color: #ebecf0;
+}
+
+.column-title-input {
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  padding: 6px 8px;
+  background: var(--surface);
+  color: var(--text);
+  flex: 1;
+}
+
+.column-title-input::placeholder {
+  color: #9ca3af;
+}
+
+.column-title-input:focus {
+  outline: none;
+  border-color: var(--accentHover);
+}
+
+.delete-column-btn {
+  background: none;
+  border: 1px solid transparent;
+  font-size: 18px;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.delete-column-btn:hover {
+  background-color: #ebecf0;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.add-task-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.add-task-input {
+  flex: 1;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.add-task-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.add-task-btn {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  padding: 8px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.add-task-btn:hover {
+  background: var(--accentHover);
+  border-color: var(--accentHover);
+}
+
+.tasks-container {
+  flex: 1;
+  min-height: 100px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.tasks-container.dragging-over {
+  background-color: #ebecf0;
+}
+
+.task {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 8px;
+  cursor: grab;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  color: var(--text);
+}
+
+.task:hover {
+  border-color: var(--accent);
+  background-color: #f7f8fa;
+}
+
+.task.dragging {
+  cursor: grabbing;
+  transform: scale(1.01);
+  border-color: var(--accent);
+  background: #f0f4ff;
+}
+
+.task-content {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--text);
+  word-wrap: break-word;
+}
+
+.task-title-input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 8px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: center;
+}
+
+.task-status-select {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.task-delete-btn {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: #b91c1c;
+  width: 28px;
+  height: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.task-delete-btn:hover {
+  background: #fff0f0;
+  border-color: #ffc9c9;
+}
+
+.task-status-select option {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.kanban-board {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 0;
+  background: var(--bg);
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.add-column-btn {
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.add-column-btn:hover {
+  background: var(--accentHover);
+  border-color: var(--accentHover);
+}
+
+.columns-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.columns-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.columns-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.columns-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.columns-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.task-count {
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: var(--bg);
+  padding: 20px;
+  color: var(--text);
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+main {
+  padding: 0 20px;
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 768px) {
+  .column {
+    padding: 10px;
+    min-width: 200px;
+    max-width: 240px;
+  }
+
+  .column-header {
+    margin-bottom: 12px;
+  }
+
+  .column-title {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+
+  .column-title-input {
+    font-size: 14px;
+    padding: 5px 6px;
+  }
+
+  .delete-column-btn {
+    font-size: 16px;
+    padding: 4px 8px;
+  }
+
+  .add-task-form {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .add-task-input {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .add-task-btn {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .task {
+    padding: 10px;
+  }
+
+  .task-content {
+    font-size: 13px;
+  }
+
+  .task-title-input {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-status-select {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+
+  .task-delete-btn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .board-header {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .add-column-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    width: 100%;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .columns-container {
+    gap: 12px;
+    padding: 0 10px 14px;
+  }
+
+  .App-header {
+    padding: 14px;
+  }
+
+  .App-header h1 {
+    font-size: 1.5rem;
+  }
+
+  main {
+    padding: 0 12px;
+  }
+}
+
+/* Additional responsiveness for very small screens (e.g., <480px) */
+@media (max-width: 480px) {
+  .column {
+    min-width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .columns-container {
+    flex-direction: column;
+    gap: 16px;
+    overflow-x: hidden;
+    padding: 0 8px 12px;
+  }
+
+  .column-title {
+    font-size: 13px;
+  }
+
+  .column-title-input {
+    font-size: 13px;
+  }
+
+  .delete-column-btn {
+    font-size: 14px;
+    padding: 3px 6px;
+  }
+
+  .add-task-input {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+
+  .add-task-btn {
+    font-size: 11px;
+    padding: 5px 6px;
+  }
+
+  .task {
+    padding: 8px;
+  }
+
+  .task-content {
+    font-size: 12px;
+  }
+
+  .task-title-input {
+    font-size: 12px;
+    padding: 5px 6px;
+  }
+
+  .task-status-select {
+    font-size: 10px;
+    padding: 4px 5px;
+  }
+
+  .task-delete-btn {
+    width: 24px;
+    height: 24px;
+    padding: 3px;
+  }
+
+  .add-column-btn {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .App-header {
+    padding: 12px;
+  }
+
+  .App-header h1 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    padding: 0 8px;
+  }
+
+  /* Improve touch interaction */
+  button,
+  .add-task-btn,
+  .add-column-btn,
+  .delete-column-btn,
+  .task-delete-btn {
+    touch-action: manipulation; /* Prevent double-tap zoom on touch devices */
+    -webkit-tap-highlight-color: transparent; /* Remove tap highlight on mobile */
+  }
+
+  .task {
+    cursor: default; /* Disable grab cursor on touch devices for better usability */
+  }
+}
+
+/* Base styles for root, body, and other elements remain unchanged */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: #213547;
   background-color: #ffffff;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -30,9 +503,14 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
 }
 
 button {
@@ -46,9 +524,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -65,4 +545,16 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Jira-like light theme */
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --panel: #f4f5f7;
+  --border: #dfe1e6;
+  --text: #172b4d;
+  --muted: #6b778c;
+  --accent: #0052cc;
+  --accentHover: #0747a6;
 }
