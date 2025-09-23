@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import { Droppable } from "@hello-pangea/dnd"
 import Task from "./Task"

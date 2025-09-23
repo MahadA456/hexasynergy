@@ -11,25 +11,31 @@ const KanbanBoard = () => {
       title: "Backlog",
       tasks: [
         { id: "task-1", title: "Create project structure" },
-        { id: "task-2", title: "Setup development environment" },
+        
       ],
     },
     {
       id: "in-development",
       title: "In Development",
-      tasks: [{ id: "task-3", title: "Implement drag and drop" }],
+      tasks: [{ id: "task-2", title: "Implement drag and drop" }],
     },
     {
       id: "review",
       title: "Review",
-      tasks: [],
+      tasks: [{ id: "task-3", title: "Setup development environment" },],
     },
     {
       id: "complete",
       title: "Complete",
       tasks: [{ id: "task-4", title: "Initial project setup" }],
+    }, {
+      id: "submitted",
+      title: "Submitted",
+      tasks: [{ id: "task-5", title: "Initial project setup" }],
     },
   ])
+
+  
 
 
   const generateId = () => `id-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
