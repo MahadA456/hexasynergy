@@ -40,24 +40,24 @@
 
   @media (max-width: 768px) {
     .kanban-board {
-      padding: 12px 16px;
+      padding: 12px 10px;
       max-width: 100%;
     }
-    
+
     .board-header {
       justify-content: center;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
-    
+
     .columns-container {
-      flex-direction: column !important;
-      gap: 16px;
-      padding: 0;
-      overflow-x: hidden !important;
-      overflow-y: visible;
-      max-height: none;
+      flex-direction: row !important;
+      gap: 12px;
+      padding: 0 6px 12px;
+      overflow-x: auto !important;
+      overflow-y: hidden !important;
+      -webkit-overflow-scrolling: touch;
     }
-    
+
     .add-column-btn {
       padding: 8px 12px;
       font-size: 12px;
