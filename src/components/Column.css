@@ -125,6 +125,7 @@
       min-width: 260px;
       max-width: 300px;
       width: 80vw;
+      scroll-snap-align: start;
     }
     .column-header {
       margin-bottom: 12px;

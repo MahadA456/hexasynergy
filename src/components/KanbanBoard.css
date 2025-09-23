@@ -40,7 +40,7 @@
 
   @media (max-width: 768px) {
     .kanban-board {
-      padding: 12px 10px;
+      padding: 12px 0;
       max-width: 100%;
     }
 
@@ -52,10 +52,12 @@
     .columns-container {
       flex-direction: row !important;
       gap: 12px;
-      padding: 0 6px 12px;
+      padding: 0 0 12px;
       overflow-x: auto !important;
       overflow-y: hidden !important;
       -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      scroll-padding-left: 0;
     }
 
     .add-column-btn {
